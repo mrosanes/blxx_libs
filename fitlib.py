@@ -70,6 +70,6 @@ class GaussianFit(BaseFit):
         nheight = results[2]
         ncenter = results[3]
         nsigma = abs(results[4])
-        fwhm = 2*np.sqrt(2*np.log(2))*sigma
+        fwhm = 2*np.sqrt(2*np.log(2))*nsigma
         return noffset, nslope, nheight, ncenter, nsigma, fwhm
 
