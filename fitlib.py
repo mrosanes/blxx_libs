@@ -22,7 +22,7 @@ class GaussianFit(BaseFit):
     Class to fit the data to a gaussian + slope curve.
     """
 
-    def _gaussian(self, x, v=[0.0, 0.0, 1.0, 0.0, 1.0]):
+    def gaussian(self, x, v=[0.0, 0.0, 1.0, 0.0, 1.0]):
         """
         Funtion to implement a guassian funtion plus a line:
         y = A + B*x + C*exp(-((x - D) / E)**2 / 2)
@@ -59,7 +59,7 @@ class GaussianFit(BaseFit):
 
         # errfunc returns the difference between data and fitted function
         # at the given x for the given parameters v
-        errfunc = lambda v, x, y: (self._gaussian(x, v) - y)
+        errfunc = lambda v, x, y: (self.gaussian(x, v) - y)
 
         # leastsq search the v parameters that minimizes the sum of squared
         # errfunc values
