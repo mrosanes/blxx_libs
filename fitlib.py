@@ -53,8 +53,8 @@ class GaussianFit(BaseFit):
         slope = 0
         height = 0.6 * (y_max-y_min)
         center = (x_min + x_max)/2
-        sigma = 1
-
+        sigma = (x_max - x_min)/6
+    
         init_values = [offset, slope, height, center, sigma]
 
         # errfunc returns the difference between data and fitted function
